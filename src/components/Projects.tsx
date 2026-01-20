@@ -4,12 +4,21 @@ import { Button } from "@/components/ui/button";
 const projects = [
   {
     title: "EcoBot",
-    label: "Team Project",
     description:
-      "AI-powered greenhouse monitoring system combining computer vision and NLP for plant health inspection.",
-    role: "Built the RAG-powered chatbot using FAISS and GROQ's Llama 3.3 70B model, designed the Streamlit dashboard, created custom knowledge base, and integrated video analysis with chatbot interface.",
-    techStack: ["Python", "Streamlit", "FAISS", "GROQ API", "LangChain"],
-    github: "#",
+      "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer using AI.",
+    howItWorks: [
+      "Searches plant care documents using FAISS (vector database)",
+      "Generates answers using GROQ Llama 3.3 70B",
+      "Converts text to embeddings using HuggingFace Sentence Transformers",
+      "Simple web interface built with Streamlit",
+    ],
+    upcoming: [
+      "Multi-model fallback — if one free API stops working, another takes over automatically",
+      "Premium tier — users can pay for better AI models",
+    ],
+    learningSkills: ["Agentic AI", "LangGraph", "FastAPI"],
+    techStack: ["Python", "LangChain", "FAISS", "Streamlit", "GROQ API", "HuggingFace"],
+    github: "https://github.com/afsanarhea/EcoBot",
     status: "completed",
   },
   {
@@ -45,28 +54,64 @@ const Projects = () => {
                   <h3 className="text-xl font-semibold text-foreground">
                     {project.title}
                   </h3>
-                  <span
-                    className={`px-3 py-1 text-xs rounded-full ${
-                      project.status === "upcoming"
-                        ? "bg-primary/10 text-primary border border-primary/30"
-                        : "bg-secondary text-secondary-foreground"
-                    }`}
-                  >
-                    {project.label}
-                  </span>
                   {project.status === "upcoming" && (
-                    <Clock className="text-primary" size={16} />
+                    <>
+                      <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/30">
+                        Upcoming
+                      </span>
+                      <Clock className="text-primary" size={16} />
+                    </>
                   )}
                 </div>
 
                 <p className="text-muted-foreground mb-4">{project.description}</p>
 
-                <div className="mb-4">
-                  <h4 className="text-sm font-medium text-foreground mb-2">
-                    {project.status === "upcoming" ? "Current Status:" : "My Role:"}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">{project.role}</p>
-                </div>
+                {project.howItWorks && (
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-foreground mb-2">How it works:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {project.howItWorks.map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {project.upcoming && (
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Upcoming:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {project.upcoming.map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {project.learningSkills && (
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Skills I'm learning for this:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.learningSkills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/30"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.role && (
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-foreground mb-2">
+                      {project.status === "upcoming" ? "Current Status:" : "My Role:"}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">{project.role}</p>
+                  </div>
+                )}
 
                 {project.vision && (
                   <div className="mb-4">
@@ -86,7 +131,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {project.status === "completed" && (
+                {project.github && project.status === "completed" && (
                   <div className="flex gap-4">
                     <Button
                       variant="ghost"
