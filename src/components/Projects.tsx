@@ -16,11 +16,12 @@ const projects = [
     description:
       "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer using AI.",
     showArchitecture: true,
+    builtWith: ["Python", "LangChain", "FAISS", "Streamlit", "GROQ API", "HuggingFace"],
     howItWorks: [
       "Searches plant care documents using FAISS (vector database)",
       "Generates answers using GROQ Llama 3.3 70B",
       "Converts text to embeddings using HuggingFace Sentence Transformers",
-      "Simple web interface built with Streamlit",
+      "Web interface built with Streamlit",
     ],
     upcoming: [
       "Multi-model fallback — if one free API stops working, another takes over automatically",
@@ -90,6 +91,22 @@ const Projects = () => {
                             <ArrowRight className="text-muted-foreground hidden md:block" size={16} />
                           )}
                         </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.builtWith && (
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Built with:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.builtWith.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
+                        >
+                          {tech}
+                        </span>
                       ))}
                     </div>
                   </div>
