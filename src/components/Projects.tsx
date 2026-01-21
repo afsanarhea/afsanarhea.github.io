@@ -37,6 +37,7 @@ const projects = [
     ],
     learningSkills: ["Agentic AI", "LangGraph", "FastAPI"],
     github: "https://github.com/afsanarhea/EcoBot",
+    liveDemo: "https://ecobot-afsanarhea.streamlit.app/",
     status: "completed",
   },
   {
@@ -56,18 +57,8 @@ const projects = [
       "Kazakhstan-specific dataset",
     ],
     github: "https://github.com/afsanarhea/Fire-Detection",
+    liveDemo: "https://huggingface.co/spaces/Afsana01/fire-detection",
     status: "completed",
-  },
-  {
-    title: "Forest Fire Detection System",
-    label: "Upcoming",
-    description:
-      "AI-powered forest fire detection system for Kazakhstan using satellite/camera imagery and RAG system.",
-    role: "Planning phase - Currently learning required AI/ML skills to build this project.",
-    vision:
-      "Early fire detection to save forests and lives in Kazakhstan's vulnerable regions.",
-    techStack: ["Python", "PyTorch", "Computer Vision", "RAG"],
-    status: "upcoming",
   },
 ];
 
@@ -220,34 +211,31 @@ const Projects = () => {
                 )}
 
 
-                {project.role && (
-                  <div className="mb-4">
-                    <h4 className="text-sm font-medium text-foreground mb-2">
-                      {project.status === "upcoming" ? "Current Status:" : "My Role:"}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">{project.role}</p>
-                  </div>
-                )}
 
-                {project.vision && (
-                  <div className="mb-4">
-                    <h4 className="text-sm font-medium text-foreground mb-2">Vision:</h4>
-                    <p className="text-sm text-muted-foreground italic">{project.vision}</p>
-                  </div>
-                )}
-
-
-                {project.github && (
+                {(project.github || project.liveDemo) && (
                   <div className="flex gap-4">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-muted-foreground hover:text-primary gap-2"
-                      onClick={() => window.open(project.github, "_blank")}
-                    >
-                      <Github size={16} />
-                      GitHub
-                    </Button>
+                    {project.github && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-muted-foreground hover:text-primary gap-2"
+                        onClick={() => window.open(project.github, "_blank")}
+                      >
+                        <Github size={16} />
+                        GitHub
+                      </Button>
+                    )}
+                    {project.liveDemo && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-muted-foreground hover:text-primary gap-2"
+                        onClick={() => window.open(project.liveDemo, "_blank")}
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </Button>
+                    )}
                   </div>
                 )}
               </div>
