@@ -1,11 +1,21 @@
-import { Github, ExternalLink, Clock } from "lucide-react";
+import { Github, ExternalLink, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const pipelineSteps = [
+  { title: "User Query", subtitle: "Input" },
+  { title: "Embeddings", subtitle: "HuggingFace" },
+  { title: "Vector Search", subtitle: "FAISS" },
+  { title: "Context", subtitle: "Relevant Docs" },
+  { title: "LLM", subtitle: "GROQ Llama 3.3" },
+  { title: "Response", subtitle: "Streamlit" },
+];
 
 const projects = [
   {
     title: "EcoBot",
     description:
       "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer using AI.",
+    showArchitecture: true,
     howItWorks: [
       "Searches plant care documents using FAISS (vector database)",
       "Generates answers using GROQ Llama 3.3 70B",
@@ -17,7 +27,6 @@ const projects = [
       "Premium tier — users can pay for better AI models",
     ],
     learningSkills: ["Agentic AI", "LangGraph", "FastAPI"],
-    techStack: ["Python", "LangChain", "FAISS", "Streamlit", "GROQ API", "HuggingFace"],
     github: "https://github.com/afsanarhea/EcoBot",
     status: "completed",
   },
@@ -64,7 +73,27 @@ const Projects = () => {
                   )}
                 </div>
 
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <p className="text-muted-foreground mb-6">{project.description}</p>
+
+                {project.showArchitecture && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-primary mb-2">RAG Architecture</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Retrieval-Augmented Generation Pipeline</p>
+                    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+                      {pipelineSteps.map((step, index) => (
+                        <div key={step.title} className="flex items-center gap-2 md:gap-3">
+                          <div className="bg-card border border-border rounded-lg px-3 py-2 md:px-4 md:py-3 text-center min-w-[80px] md:min-w-[100px]">
+                            <p className="text-xs md:text-sm font-medium text-foreground">{step.title}</p>
+                            <p className="text-[10px] md:text-xs text-muted-foreground">{step.subtitle}</p>
+                          </div>
+                          {index < pipelineSteps.length - 1 && (
+                            <ArrowRight className="text-muted-foreground hidden md:block" size={16} />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {project.howItWorks && (
                   <div className="mb-4">
@@ -104,6 +133,7 @@ const Projects = () => {
                   </div>
                 )}
 
+
                 {project.role && (
                   <div className="mb-4">
                     <h4 className="text-sm font-medium text-foreground mb-2">
@@ -120,16 +150,6 @@ const Projects = () => {
                   </div>
                 )}
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
 
                 {project.github && project.status === "completed" && (
                   <div className="flex gap-4">
