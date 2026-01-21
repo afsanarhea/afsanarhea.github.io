@@ -1,7 +1,7 @@
 import { Github, ExternalLink, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const pipelineSteps = [
+const ragPipelineSteps = [
   { title: "User Query", subtitle: "Input" },
   { title: "Embeddings", subtitle: "HuggingFace" },
   { title: "Vector Search", subtitle: "FAISS" },
@@ -10,12 +10,20 @@ const pipelineSteps = [
   { title: "Response", subtitle: "Streamlit" },
 ];
 
+const cnnPipelineSteps = [
+  { title: "Image Input", subtitle: "Upload" },
+  { title: "Preprocessing", subtitle: "Resize / Normalize" },
+  { title: "CNN Model", subtitle: "TensorFlow / Keras" },
+  { title: "Classification", subtitle: "Fire / No Fire" },
+  { title: "Result", subtitle: "Flask Web App" },
+];
+
 const projects = [
   {
     title: "EcoBot",
     description:
       "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer using AI.",
-    showArchitecture: true,
+    architectureType: "rag",
     builtWith: ["Python", "LangChain", "FAISS", "Streamlit", "GROQ API", "HuggingFace"],
     howItWorks: [
       "Searches plant care documents using FAISS (vector database)",
@@ -29,6 +37,25 @@ const projects = [
     ],
     learningSkills: ["Agentic AI", "LangGraph", "FastAPI"],
     github: "https://github.com/afsanarhea/EcoBot",
+    status: "completed",
+  },
+  {
+    title: "Fire Detection",
+    description:
+      "A fire detection system using CNN for binary image classification.",
+    architectureType: "cnn",
+    builtWith: ["Python", "TensorFlow", "Keras", "Flask"],
+    performance: [
+      "Training Accuracy: 98.25%",
+      "Testing Accuracy: 97.00%",
+      "Dataset: 1000 images (Kaggle Fire Dataset)",
+    ],
+    futureScope: [
+      "Model upgrade (ResNet, MobileNet)",
+      "Satellite data integration",
+      "Kazakhstan-specific dataset",
+    ],
+    github: "https://github.com/afsanarhea/Fire-Detection",
     status: "completed",
   },
   {
@@ -76,18 +103,38 @@ const Projects = () => {
 
                 <p className="text-muted-foreground mb-6">{project.description}</p>
 
-                {project.showArchitecture && (
+                {project.architectureType === "rag" && (
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-primary mb-2">RAG Architecture</h4>
                     <p className="text-xs text-muted-foreground mb-4">Retrieval-Augmented Generation Pipeline</p>
                     <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
-                      {pipelineSteps.map((step, index) => (
+                      {ragPipelineSteps.map((step, index) => (
                         <div key={step.title} className="flex items-center gap-2 md:gap-3">
                           <div className="bg-card border border-border rounded-lg px-3 py-2 md:px-4 md:py-3 text-center min-w-[80px] md:min-w-[100px]">
                             <p className="text-xs md:text-sm font-medium text-foreground">{step.title}</p>
                             <p className="text-[10px] md:text-xs text-muted-foreground">{step.subtitle}</p>
                           </div>
-                          {index < pipelineSteps.length - 1 && (
+                          {index < ragPipelineSteps.length - 1 && (
+                            <ArrowRight className="text-muted-foreground hidden md:block" size={16} />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.architectureType === "cnn" && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-primary mb-2">CNN Architecture</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Image Classification Pipeline</p>
+                    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+                      {cnnPipelineSteps.map((step, index) => (
+                        <div key={step.title} className="flex items-center gap-2 md:gap-3">
+                          <div className="bg-card border border-border rounded-lg px-3 py-2 md:px-4 md:py-3 text-center min-w-[80px] md:min-w-[100px]">
+                            <p className="text-xs md:text-sm font-medium text-foreground">{step.title}</p>
+                            <p className="text-[10px] md:text-xs text-muted-foreground">{step.subtitle}</p>
+                          </div>
+                          {index < cnnPipelineSteps.length - 1 && (
                             <ArrowRight className="text-muted-foreground hidden md:block" size={16} />
                           )}
                         </div>
@@ -134,6 +181,28 @@ const Projects = () => {
                   </div>
                 )}
 
+                {project.performance && (
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Performance:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {project.performance.map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {project.futureScope && (
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Future Scope:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {project.futureScope.map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {project.learningSkills && (
                   <div className="mb-4">
                     <h4 className="text-sm font-medium text-foreground mb-2">Skills I'm learning for this:</h4>
@@ -168,7 +237,7 @@ const Projects = () => {
                 )}
 
 
-                {project.github && project.status === "completed" && (
+                {project.github && (
                   <div className="flex gap-4">
                     <Button
                       variant="ghost"
