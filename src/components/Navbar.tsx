@@ -26,9 +26,9 @@ const Navbar = () => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="text-xl font-semibold text-primary"
+            className="text-sm font-medium text-primary"
           >
-            AR
+            Afsana Rhea
           </a>
 
           {/* Desktop Navigation */}

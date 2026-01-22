@@ -28,10 +28,10 @@ const Skills = () => {
     <section id="skills" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            <span className="text-primary">01.</span> Skills
+          <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+            Skills
           </h2>
-          <div className="h-px bg-border flex-1 ml-4 inline-block w-48" />
+          <div className="h-px bg-border flex-1 ml-4 inline-block w-32" />
           
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((category) => (
