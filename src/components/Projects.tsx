@@ -57,7 +57,7 @@ const projects = [
       "Kazakhstan-specific dataset",
     ],
     github: "https://github.com/afsanarhea/Fire-Detection",
-    liveDemo: "https://huggingface.co/spaces/Afsana01/fire-detection",
+    liveDemo: "https://huggingface.co/spaces/Afsana01/fire-detection#/",
     status: "completed",
   },
 ];
