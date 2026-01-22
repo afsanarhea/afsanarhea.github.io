@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
@@ -44,13 +42,6 @@ const Navbar = () => {
                 {link.name}
               </button>
             ))}
-            <Button
-              size="sm"
-              className="bg-transparent border border-primary text-primary hover:bg-primary/10"
-              onClick={() => window.open("/resume.pdf", "_blank")}
-            >
-              Resume
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,13 +66,6 @@ const Navbar = () => {
                   {link.name}
                 </button>
               ))}
-              <Button
-                size="sm"
-                className="bg-transparent border border-primary text-primary hover:bg-primary/10 w-fit"
-                onClick={() => window.open("/resume.pdf", "_blank")}
-              >
-                Resume
-              </Button>
             </div>
           </div>
         )}
