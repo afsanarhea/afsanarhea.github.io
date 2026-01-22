@@ -1,20 +1,20 @@
-import { Code2, Brain, Globe, Wrench, BookOpen } from "lucide-react";
+import { Code2, Brain, Globe, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
     icon: Code2,
     title: "Programming",
-    skills: ["Python", "SQL (PostgreSQL)"],
+    skills: ["Python", "SQL", "Data Structures & Algorithms"],
   },
   {
     icon: Brain,
     title: "AI/ML",
-    skills: ["RAG Systems", "FAISS", "GROQ API", "LangChain"],
+    skills: ["TensorFlow / Keras", "LangChain", "RAG Systems", "FAISS", "Probability & Statistics"],
   },
   {
     icon: Globe,
     title: "Web Development",
-    skills: ["Streamlit"],
+    skills: ["Flask", "Streamlit"],
   },
   {
     icon: Wrench,
@@ -22,8 +22,6 @@ const skillCategories = [
     skills: ["Git", "GitHub"],
   },
 ];
-
-const learningSkills = ["PyTorch", "Data Structures & Algorithms"];
 
 const Skills = () => {
   return (
@@ -53,23 +51,6 @@ const Skills = () => {
                 </ul>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-10 bg-card border border-border rounded-lg p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <BookOpen className="text-primary" size={20} />
-              <h3 className="font-medium text-foreground">Currently Learning</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {learningSkills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 text-sm rounded-full border border-primary/30 text-primary bg-primary/5"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
