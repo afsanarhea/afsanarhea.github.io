@@ -22,7 +22,7 @@ const projects = [
   {
     title: "EcoBot",
     description:
-      "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer using AI.",
+      "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer.",
     architectureType: "rag",
     builtWith: ["Python", "LangChain", "FAISS", "Streamlit", "GROQ API", "HuggingFace"],
     howItWorks: [
@@ -67,10 +67,10 @@ const Projects = () => {
     <section id="projects" className="py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            <span className="text-primary">02.</span> Projects
+          <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+            Projects
           </h2>
-          <div className="h-px bg-border flex-1 ml-4 inline-block w-48" />
+          <div className="h-px bg-border flex-1 ml-4 inline-block w-32" />
 
           <div className="mt-10 space-y-8">
             {projects.map((project) => (

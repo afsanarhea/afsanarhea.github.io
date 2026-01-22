@@ -5,8 +5,8 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-            <span className="text-primary">03.</span> Contact
+          <h2 className="text-xl md:text-2xl font-bold text-foreground mb-8">
+            Contact
           </h2>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
