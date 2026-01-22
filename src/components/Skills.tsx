@@ -19,7 +19,7 @@ const skillCategories = [
   {
     icon: Wrench,
     title: "Tools",
-    skills: ["Git", "GitHub"],
+    skills: ["Git", "GitHub", "Hugging Face"],
   },
 ];
 
@@ -29,7 +29,7 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            <span className="text-primary">02.</span> Skills
+            <span className="text-primary">01.</span> Skills
           </h2>
           <div className="h-px bg-border flex-1 ml-4 inline-block w-48" />
           
