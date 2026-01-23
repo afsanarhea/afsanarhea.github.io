@@ -5,7 +5,7 @@ const skillCategories = [
   {
     icon: Code2,
     title: "Programming",
-    skills: ["Python", "SQL", "DSA"],
+    skills: ["Python", "SQL", "Data Structures & Algorithms"],
   },
   {
     icon: Brain,
@@ -39,11 +39,8 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Afsana Alamgir Rhea
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              RAG systems. Computer vision. Deployed and working.
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              Exploring GenAI and deep learning through real-world projects.
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              Building intelligent systems specializing in RAG architectures and computer vision. Creating production-ready AI solutions that solve real-world problems.
             </p>
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <Button
