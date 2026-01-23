@@ -185,7 +185,7 @@ const Projects = () => {
 
                 {project.futureScope && (
                   <div className="mb-4">
-                    <h4 className="text-sm font-medium text-foreground mb-2">Future Scope:</h4>
+                    <h4 className="text-sm font-medium text-foreground mb-2">Planned Upgrades:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {project.futureScope.map((item, index) => (
                         <li key={index}>• {item}</li>
@@ -215,15 +215,20 @@ const Projects = () => {
                 {(project.github || project.liveDemo) && (
                   <div className="flex gap-4">
                     {project.github && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-muted-foreground hover:text-primary gap-2"
-                        onClick={() => window.open(project.github, "_blank")}
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <Github size={16} />
-                        GitHub
-                      </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-muted-foreground hover:text-primary gap-2"
+                        >
+                          <Github size={16} />
+                          GitHub
+                        </Button>
+                      </a>
                     )}
                     {project.liveDemo && (
                       <a
