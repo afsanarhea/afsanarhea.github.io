@@ -36,13 +36,13 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Intro */}
           <div className="text-center md:text-left mb-12">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Afsana Alamgir Rhea
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground mb-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               RAG systems. Computer vision. Deployed and working.
             </p>
-            <p className="text-sm md:text-base text-muted-foreground/80 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <p className="text-base md:text-lg text-muted-foreground/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               Exploring GenAI and deep learning through real-world projects.
             </p>
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -59,18 +59,18 @@ const Hero = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             {skillCategories.map((category) => (
               <div
                 key={category.title}
-                className="bg-card/50 border border-border rounded-lg p-4 hover:border-primary/50 transition-colors"
+                className="bg-card/50 border border-border rounded-lg p-5 hover:border-primary/50 transition-colors"
               >
-                <category.icon className="text-primary mb-3" size={20} />
-                <h3 className="font-medium text-foreground text-sm mb-2">{category.title}</h3>
-                <ul className="space-y-1">
+                <category.icon className="text-primary mb-3" size={24} />
+                <h3 className="font-medium text-foreground text-base mb-3">{category.title}</h3>
+                <ul className="space-y-2">
                   {category.skills.map((skill) => (
-                    <li key={skill} className="text-xs text-muted-foreground flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-primary" />
+                    <li key={skill} className="text-sm text-muted-foreground flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {skill}
                     </li>
                   ))}
