@@ -98,15 +98,15 @@ const Projects = () => {
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-primary mb-2">RAG Architecture</h4>
                     <p className="text-xs text-muted-foreground mb-4">Retrieval-Augmented Generation Pipeline</p>
-                    <div className="flex items-center justify-start gap-1 md:gap-2 overflow-x-auto pb-2">
+                    <div className="flex items-center justify-start gap-2 md:gap-3 overflow-x-auto pb-2">
                       {ragPipelineSteps.map((step, index) => (
-                        <div key={step.title} className="flex items-center gap-1 md:gap-2 flex-shrink-0">
-                          <div className="bg-card border border-border rounded-lg px-2 py-1.5 md:px-3 md:py-2 text-center">
-                            <p className="text-xs font-medium text-foreground whitespace-nowrap">{step.title}</p>
-                            <p className="text-[10px] text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
+                        <div key={step.title} className="flex items-center gap-2 md:gap-3 flex-shrink-0">
+                          <div className="bg-card border border-border rounded-lg px-3 py-2 md:px-4 md:py-3 text-center min-w-[90px] md:min-w-[110px]">
+                            <p className="text-sm md:text-base font-medium text-foreground whitespace-nowrap">{step.title}</p>
+                            <p className="text-xs md:text-sm text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
                           </div>
                           {index < ragPipelineSteps.length - 1 && (
-                            <ArrowRight className="text-muted-foreground flex-shrink-0" size={14} />
+                            <ArrowRight className="text-muted-foreground flex-shrink-0" size={18} />
                           )}
                         </div>
                       ))}
@@ -185,7 +185,7 @@ const Projects = () => {
 
                 {project.futureScope && (
                   <div className="mb-4">
-                    <h4 className="text-sm font-medium text-foreground mb-2">Planned Upgrades:</h4>
+                    <h4 className="text-sm font-medium text-foreground mb-2">Upgrades:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {project.futureScope.map((item, index) => (
                         <li key={index}>• {item}</li>
@@ -235,6 +235,7 @@ const Projects = () => {
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
+                        referrerPolicy="no-referrer"
                       >
                         <Button
                           variant="ghost"
