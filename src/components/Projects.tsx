@@ -98,15 +98,15 @@ const Projects = () => {
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-primary mb-2">RAG Architecture</h4>
                     <p className="text-xs text-muted-foreground mb-4">Retrieval-Augmented Generation Pipeline</p>
-                    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+                    <div className="flex items-center justify-start gap-1 md:gap-2 overflow-x-auto pb-2">
                       {ragPipelineSteps.map((step, index) => (
-                        <div key={step.title} className="flex items-center gap-2 md:gap-3">
-                          <div className="bg-card border border-border rounded-lg px-3 py-2 md:px-4 md:py-3 text-center min-w-[80px] md:min-w-[100px]">
-                            <p className="text-xs md:text-sm font-medium text-foreground">{step.title}</p>
-                            <p className="text-[10px] md:text-xs text-muted-foreground">{step.subtitle}</p>
+                        <div key={step.title} className="flex items-center gap-1 md:gap-2 flex-shrink-0">
+                          <div className="bg-card border border-border rounded-lg px-2 py-1.5 md:px-3 md:py-2 text-center">
+                            <p className="text-xs font-medium text-foreground whitespace-nowrap">{step.title}</p>
+                            <p className="text-[10px] text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
                           </div>
                           {index < ragPipelineSteps.length - 1 && (
-                            <ArrowRight className="text-muted-foreground hidden md:block" size={16} />
+                            <ArrowRight className="text-muted-foreground flex-shrink-0" size={14} />
                           )}
                         </div>
                       ))}
@@ -226,15 +226,20 @@ const Projects = () => {
                       </Button>
                     )}
                     {project.liveDemo && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-muted-foreground hover:text-primary gap-2"
-                        onClick={() => window.open(project.liveDemo, "_blank")}
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <ExternalLink size={16} />
-                        Live Demo
-                      </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-muted-foreground hover:text-primary gap-2"
+                        >
+                          <ExternalLink size={16} />
+                          Live Demo
+                        </Button>
+                      </a>
                     )}
                   </div>
                 )}
