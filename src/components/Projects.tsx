@@ -67,10 +67,9 @@ const Projects = () => {
     <section id="projects" className="py-16 md:py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+          <h2 className="text-xl md:text-2xl font-bold text-foreground">
             Projects
           </h2>
-          <div className="h-px bg-border flex-1 ml-4 inline-block w-32" />
 
           <div className="mt-10 space-y-8">
             {projects.map((project) => (
