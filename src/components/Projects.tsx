@@ -117,15 +117,15 @@ const Projects = () => {
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-primary mb-2">CNN Architecture</h4>
                     <p className="text-xs text-muted-foreground mb-4">Image Classification Pipeline</p>
-                    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+                    <div className="flex items-center justify-start gap-1.5 overflow-x-auto pb-2">
                       {cnnPipelineSteps.map((step, index) => (
-                        <div key={step.title} className="flex items-center gap-2 md:gap-3">
-                          <div className="bg-card border border-border rounded-lg px-3 py-2 md:px-4 md:py-3 text-center min-w-[80px] md:min-w-[100px]">
-                            <p className="text-xs md:text-sm font-medium text-foreground">{step.title}</p>
-                            <p className="text-[10px] md:text-xs text-muted-foreground">{step.subtitle}</p>
+                        <div key={step.title} className="flex items-center gap-1.5 flex-shrink-0">
+                          <div className="bg-card border border-border rounded px-2 py-1.5 text-center">
+                            <p className="text-xs font-medium text-foreground whitespace-nowrap">{step.title}</p>
+                            <p className="text-[10px] text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
                           </div>
                           {index < cnnPipelineSteps.length - 1 && (
-                            <ArrowRight className="text-muted-foreground hidden md:block" size={16} />
+                            <ArrowRight className="text-muted-foreground flex-shrink-0" size={12} />
                           )}
                         </div>
                       ))}
