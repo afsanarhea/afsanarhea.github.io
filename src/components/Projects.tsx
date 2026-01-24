@@ -24,7 +24,7 @@ const projects = [
     description:
       "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer.",
     architectureType: "rag",
-    builtWith: ["Python", "LangChain", "FAISS", "Streamlit", "GROQ API", "HuggingFace"],
+    builtWith: ["Python", "LangChain", "FAISS", "Streamlit", "HuggingFace"],
     howItWorks: [
       "Searches plant care documents using FAISS (vector database)",
       "Generates answers using GROQ Llama 3.3 70B",
@@ -64,7 +64,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-16 md:py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
@@ -98,15 +98,15 @@ const Projects = () => {
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-primary mb-2">RAG Architecture</h4>
                     <p className="text-xs text-muted-foreground mb-4">Retrieval-Augmented Generation Pipeline</p>
-                    <div className="flex items-center justify-start gap-2 md:gap-3 overflow-x-auto pb-2">
+                    <div className="flex items-center justify-start gap-1.5 overflow-x-auto pb-2">
                       {ragPipelineSteps.map((step, index) => (
-                        <div key={step.title} className="flex items-center gap-2 md:gap-3 flex-shrink-0">
-                          <div className="bg-card border border-border rounded-lg px-3 py-2 md:px-4 md:py-3 text-center min-w-[90px] md:min-w-[110px]">
-                            <p className="text-sm md:text-base font-medium text-foreground whitespace-nowrap">{step.title}</p>
-                            <p className="text-xs md:text-sm text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
+                        <div key={step.title} className="flex items-center gap-1.5 flex-shrink-0">
+                          <div className="bg-card border border-border rounded px-2 py-1.5 text-center">
+                            <p className="text-xs font-medium text-foreground whitespace-nowrap">{step.title}</p>
+                            <p className="text-[10px] text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
                           </div>
                           {index < ragPipelineSteps.length - 1 && (
-                            <ArrowRight className="text-muted-foreground flex-shrink-0" size={18} />
+                            <ArrowRight className="text-muted-foreground flex-shrink-0" size={12} />
                           )}
                         </div>
                       ))}

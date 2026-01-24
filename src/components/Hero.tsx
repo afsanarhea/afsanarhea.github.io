@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 pb-8">
+    <section className="min-h-screen flex items-center justify-center pt-20 pb-16">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Intro */}
@@ -40,10 +40,10 @@ const Hero = () => {
               Afsana Alamgir Rhea
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Building intelligent systems specializing in RAG architectures and computer vision.
+              RAG systems. Computer vision. Deployed and working.
             </p>
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              Creating production-ready AI solutions that solve real-world problems.
+              Exploring GenAI and deep learning through real-world projects.
             </p>
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <Button
