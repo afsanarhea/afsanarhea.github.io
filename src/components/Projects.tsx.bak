@@ -52,6 +52,27 @@ const projects = [
     status: "completed",
   },
   {
+    title: "Perceptron.0",
+    description:
+      "Winner of the AI Security Test CTF at Digital Farabi 2026 (Innoforce · Al-Farabi KazNU). A four-layer LLM defense against prompt injection—covering system prompt leakage, direct injection, and sensitive information disclosure.",
+    builtWith: ["Python", "Gemini 2.5 Flash", "Docker", "LLM security hooks"],
+    howItWorks: [
+      "input_hook blocks attacks at the gate before the model runs (+2 per block)",
+      "prefix reinforces security rules in the system context",
+      "suffix adds a final reminder before the LLM response",
+      "output_hook catches any remaining leaks as a safety net (+1 per catch)",
+      "Defends LLM01, LLM02, and LLM07 attack categories in live scoring",
+      "Blocks attacks written in English, Kazakh and Russian, not only in English",
+    ],
+    performance: [
+      "Live mode (Gemini 2.5 Flash): 18 / 18 attacks blocked; 5 / 5 safe prompts passed",
+      "Score: 41 / 41; zero password leaks",
+      "Total hook time: 7.3 ms (limit: 100 ms per prompt)",
+    ],
+    github: "https://github.com/afsanarhea/Perceptron.0",
+    status: "completed",
+  },
+  {
     title: "EcoBot",
     description:
       "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer.",
@@ -95,27 +116,6 @@ const projects = [
     ],
     github: "https://github.com/afsanarhea/Fire-Detection",
     liveDemo: "https://huggingface.co/spaces/Afsana01/fire-detection#/",
-    status: "completed",
-  },
-  {
-    title: "Perceptron.0",
-    description:
-      "Winner of the AI Security Test CTF at Digital Farabi 2026 (Innoforce · Al-Farabi KazNU). A four-layer LLM defense against prompt injection—covering system prompt leakage, direct injection, and sensitive information disclosure.",
-    builtWith: ["Python", "Gemini 2.5 Flash", "Docker", "LLM security hooks"],
-    howItWorks: [
-      "input_hook blocks attacks at the gate before the model runs (+2 per block)",
-      "prefix reinforces security rules in the system context",
-      "suffix adds a final reminder before the LLM response",
-      "output_hook catches any remaining leaks as a safety net (+1 per catch)",
-      "Defends LLM01, LLM02, and LLM07 attack categories in live scoring",
-      "Blocks attacks written in English, Kazakh and Russian, not only in English",
-    ],
-    performance: [
-      "Live mode (Gemini 2.5 Flash): 18 / 18 attacks blocked; 5 / 5 safe prompts passed",
-      "Score: 41 / 41; zero password leaks",
-      "Total hook time: 7.3 ms (limit: 100 ms per prompt)",
-    ],
-    github: "https://github.com/afsanarhea/Perceptron.0",
     status: "completed",
   },
 ];

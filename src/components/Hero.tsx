@@ -52,9 +52,6 @@ const Hero = () => {
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               Geospatial AI and LLM systems. Agentic AI, RAG, computer vision. Deployed and working.
             </p>
-            <p className="text-base md:text-lg lg:text-xl text-muted-foreground/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              Research intern at the Artificial Intelligence and Robotics Laboratory, Al-Farabi KazNU.
-            </p>
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <Button
                 onClick={scrollToProjects}
