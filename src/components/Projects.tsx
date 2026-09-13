@@ -18,7 +18,39 @@ const cnnPipelineSteps = [
   { title: "Result", subtitle: "Flask Web App" },
 ];
 
+const agentPipelineSteps = [
+  { title: "Region Input", subtitle: "User" },
+  { title: "Agent Controller", subtitle: "GPT-OSS 120B" },
+  { title: "Fire Data", subtitle: "NASA FIRMS" },
+  { title: "Weather", subtitle: "Open-Meteo" },
+  { title: "Risk + Threat", subtitle: "Scoring" },
+  { title: "Response Plan", subtitle: "Adaptive" },
+  { title: "Report", subtitle: "EN / RU" },
+];
+
 const projects = [
+  {
+    title: "ORMÁN-Ops",
+    description:
+      "An autonomous agent for wildfire emergency operations in Kazakhstan. You give it a region; it fetches live satellite fire data and weather, assesses the risk, decides whether the situation needs emergency response or preventive readiness, and writes the operational report itself.",
+    architectureType: "agent",
+    builtWith: ["Python", "FastAPI", "Groq LPU", "React", "Leaflet", "Docker"],
+    howItWorks: [
+      "Runs six tools in sequence: fire data, weather, regional risk, threat analysis, response planning, report generation",
+      "Adapts its own plan — emergency response when fires are detected, preventive assessment when they are not",
+      "Live data from NASA FIRMS VIIRS satellites and the Open-Meteo weather API",
+      "Every reasoning step is shown to the user, so no decision is hidden",
+    ],
+    performance: [
+      "Full region assessment in about 60 seconds across six tool calls",
+      "Bilingual operational report (English / Russian) with resource allocation and wind-based spread direction",
+      "Covers 4 fire-prone forest areas and 13 administrative regions of Kazakhstan",
+    ],
+    learningSkills: ["Agentic AI", "LangGraph", "Multi-Agent Systems"],
+    github: "https://github.com/afsanarhea/orman-ops",
+    liveDemo: "https://orman-ops.onrender.com",
+    status: "completed",
+  },
   {
     title: "EcoBot",
     description:
@@ -105,6 +137,26 @@ const Projects = () => {
                             <p className="text-[10px] text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
                           </div>
                           {index < ragPipelineSteps.length - 1 && (
+                            <ArrowRight className="text-muted-foreground flex-shrink-0" size={12} />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.architectureType === "agent" && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-primary mb-2">Agent Architecture</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Autonomous Tool-Calling Pipeline</p>
+                    <div className="flex items-center justify-start gap-1.5 overflow-x-auto pb-2">
+                      {agentPipelineSteps.map((step, index) => (
+                        <div key={step.title} className="flex items-center gap-1.5 flex-shrink-0">
+                          <div className="bg-card border border-border rounded px-2 py-1.5 text-center">
+                            <p className="text-xs font-medium text-foreground whitespace-nowrap">{step.title}</p>
+                            <p className="text-[10px] text-muted-foreground whitespace-nowrap">{step.subtitle}</p>
+                          </div>
+                          {index < agentPipelineSteps.length - 1 && (
                             <ArrowRight className="text-muted-foreground flex-shrink-0" size={12} />
                           )}
                         </div>
