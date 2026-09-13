@@ -6,7 +6,7 @@ const research = {
   whatIDid: [
     "Mapped burn severity for the 2023 Semey Ormany and 2020 Karkaraly fires using Sentinel-2 imagery and dNBR analysis in Google Earth Engine",
     "Removed target-derived features and replaced random train-test splits with spatial block cross-validation",
-    "Trained Random Forest, XGBoost and LightGBM on 1,812 labelled pixels across the two sites",
+    "Trained Random Forest, XGBoost and LightGBM separately at each site (1,183 and 629 labelled pixels)",
     "Used SHAP to resolve disagreement between the models over which features mattered",
   ],
   results: [
