@@ -1,26 +1,36 @@
-import { ArrowDown, Code2, Brain, Globe, Wrench } from "lucide-react";
+import { ArrowDown, Code2, Brain, Cpu, Sparkles, Globe, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const skillCategories = [
   {
     icon: Code2,
     title: "Programming",
-    skills: ["Python", "SQL", "Data Structures & Algorithms"],
+    skills: ["Python", "SQL", "JavaScript", "Data Structures & Algorithms"],
   },
   {
     icon: Brain,
-    title: "AI/ML",
-    skills: ["TensorFlow", "LangChain", "RAG", "FAISS"],
+    title: "Machine Learning",
+    skills: ["scikit-learn", "XGBoost", "LightGBM", "SHAP"],
+  },
+  {
+    icon: Cpu,
+    title: "Deep Learning",
+    skills: ["TensorFlow", "Keras", "CNN"],
+  },
+  {
+    icon: Sparkles,
+    title: "Generative AI",
+    skills: ["RAG", "LangChain", "LangGraph", "FAISS", "prompt engineering", "LLM evaluation"],
   },
   {
     icon: Globe,
-    title: "Web",
-    skills: ["Flask", "Streamlit"],
+    title: "Geospatial",
+    skills: ["Google Earth Engine", "Sentinel-2", "QGIS"],
   },
   {
     icon: Wrench,
-    title: "Tools",
-    skills: ["Git", "GitHub", "HuggingFace"],
+    title: "Backend & Tools",
+    skills: ["FastAPI", "Flask", "Streamlit", "Docker", "Render", "Git", "HuggingFace"],
   },
 ];
 
@@ -31,7 +41,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 pb-16">
+    <section id="skills" className="min-h-screen flex items-center justify-center pt-20 pb-16">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Intro */}
@@ -40,10 +50,10 @@ const Hero = () => {
               Afsana Alamgir Rhea
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              RAG systems. Computer vision. Deployed and working.
+              Geospatial AI and LLM systems. Agentic AI, RAG, computer vision. Deployed and working.
             </p>
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              Exploring GenAI and deep learning through real-world projects.
+              Research intern at the Artificial Intelligence and Robotics Laboratory, Al-Farabi KazNU.
             </p>
             <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <Button

@@ -34,7 +34,7 @@ const projects = [
     description:
       "An autonomous agent for wildfire emergency operations in Kazakhstan. You give it a region; it fetches live satellite fire data and weather, assesses the risk, decides whether the situation needs emergency response or preventive readiness, and writes the operational report itself.",
     architectureType: "agent",
-    builtWith: ["Python", "FastAPI", "Groq LPU", "React", "Leaflet", "Docker"],
+    builtWith: ["Python", "FastAPI", "GPT-OSS 120B", "React", "Leaflet", "Docker"],
     howItWorks: [
       "Runs six tools in sequence: fire data, weather, regional risk, threat analysis, response planning, report generation",
       "Adapts its own plan — emergency response when fires are detected, preventive assessment when they are not",
@@ -49,6 +49,26 @@ const projects = [
     learningSkills: ["Agentic AI", "LangGraph", "Multi-Agent Systems"],
     github: "https://github.com/afsanarhea/orman-ops",
     liveDemo: "https://orman-ops.onrender.com",
+    status: "completed",
+  },
+  {
+    title: "Perceptron.0",
+    description:
+      "AI Security Test CTF entry for Digital Farabi 2026 (Innoforce · Al-Farabi KazNU). A four-layer LLM defense against prompt injection—covering system prompt leakage, direct injection, and sensitive information disclosure.",
+    builtWith: ["Python", "Gemini 2.5 Flash", "Docker", "LLM security hooks"],
+    howItWorks: [
+      "input_hook blocks attacks at the gate before the model runs (+2 per block)",
+      "prefix reinforces security rules in the system context",
+      "suffix adds a final reminder before the LLM response",
+      "output_hook catches any remaining leaks as a safety net (+1 per catch)",
+      "Defends LLM01, LLM02, and LLM07 attack categories in live scoring",
+    ],
+    performance: [
+      "Live mode (Gemini 2.5 Flash): 18 / 18 attacks blocked; 5 / 5 safe prompts passed",
+      "Score: 41 / 41; zero password leaks",
+      "Total hook time: 7.3 ms (limit: 100 ms per prompt)",
+    ],
+    github: "https://github.com/afsanarhea/Perceptron.0",
     status: "completed",
   },
   {
