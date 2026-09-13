@@ -6,7 +6,7 @@ const ragPipelineSteps = [
   { title: "Embeddings", subtitle: "HuggingFace" },
   { title: "Vector Search", subtitle: "FAISS" },
   { title: "Context", subtitle: "Relevant Docs" },
-  { title: "LLM", subtitle: "GROQ Llama 3.3" },
+  { title: "LLM", subtitle: "Gemini 2.5 Flash" },
   { title: "Response", subtitle: "Streamlit" },
 ];
 
@@ -56,12 +56,17 @@ const projects = [
     description:
       "A chatbot that helps users take care of their plants. You ask a question, it searches through plant care guides, finds the most relevant information, and gives you a clear answer.",
     architectureType: "rag",
-    builtWith: ["Python", "LangChain", "FAISS", "Streamlit", "HuggingFace"],
+    builtWith: ["Python", "LangChain", "FAISS", "Gemini API", "Streamlit", "HuggingFace"],
     howItWorks: [
       "Searches plant care documents using FAISS (vector database)",
-      "Generates answers using GROQ Llama 3.3 70B",
+      "Generates answers using Google Gemini 2.5 Flash",
       "Converts text to embeddings using HuggingFace Sentence Transformers",
       "Web interface built with Streamlit",
+      "Migrated the LLM backend from GROQ Llama 3.3 to Gemini 2.5 Flash without changing the retrieval layer",
+    ],
+    performance: [
+      "Retrieval in about 0.05 s; full answer in 2-5 s",
+      "Used as the test subject for a five-platform LLM observability study (LangSmith, Langfuse, PromptFoo, DeepEval, Arize Phoenix)",
     ],
     upcoming: [
       "Multi-model fallback — if one free API stops working, another takes over automatically",
